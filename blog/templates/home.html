@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h3>𝓢𝓤𝓖𝓖𝓔𝓢𝓣𝓔𝓓 𝓐𝓡𝓣𝓘𝓒𝓛𝓔𝓢</h3>
+
+<ul>
+{% for post in object_list %}
+<div class=>
+    <h5 class="card-header"> {{ post.title }} </h5>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text">{{ post.body |truncatewords:100 |safe}}</p>
+      <a href="{% url 'article-detail' post.pk %}" class="btn btn-dark">Read more</a>
+    </div>
+  </div>
+{% endfor %}
+</ul>
+
+<div class="alert alert-dismissible alert-info" role="alert">
+    For More Articles.....
+    <a class="btn-close" alert-dismissible alert-info" href="https://www.nytimes.com/topic/subject/art">click here</a>
+    </li>
+  </div>
+  </div>
+</div>
+
+<div class="card ">
+  <div class="btn btn-dark">
+    <h3 class="card__newsletter-title">Get the best of Creative Achives delivered to your inbox weekly</h3>
+    <form class="card_newsletter-form" method="post" action="/newsletter/">
+      <input class="footer__newsletter-input" type="email" name="email" placeholder="Your email" required>
+      <input type="text" name="business_address_5" class="business_address_5 footer__newsletter-address" value="" autocomplete="off">
+      <button class="btn btn-dark">Sign me up</button>
+    </form>
+            <p class="card__newsletter-message">🎉 Check your email to complete signup</p>
+  </div>
+  <div class="card__info">
+    <div class="card__about">
+        <div class="btn btn-dark"
+      <p>Art Boom celebrates, inspires and supports the creative community. Launched in 2009, we explore the best in creativity and deliver news, inspiration, insight and advice to help you succeed.</p>
+    </dir>
+
+
+{% endblock %}
